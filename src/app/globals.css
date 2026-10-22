@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== 主题变量 ========== */
+:root {
+  --bg: #fafafa;
+  --bg-soft: #f0f0f1;
+  --fg: #0a0a0a;
+  --fg-soft: #525252;
+  --card: #ffffff;
+  --line: #0a0a0a;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-hand: "Comic Sans MS", "KaiTi", "STKaiti", cursive;
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --bg-soft: #161616;
+  --fg: #f5f5f5;
+  --fg-soft: #a3a3a3;
+  --card: #131313;
+  --line: #f5f5f5;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 锚点定位时为固定导航留出空间 */
+  section[id] {
+    scroll-margin-top: 84px;
+  }
+
+  ::selection {
+    background-color: #e63946;
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* ========== 漫画卡片 ========== */
+  .manga-card {
+    background-color: var(--card);
+    border: 2px solid var(--line);
+    box-shadow: 4px 4px 0 0 var(--line);
+  }
+
+  .manga-card-hover {
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .manga-card-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 var(--line);
+  }
+
+  /* ========== 按钮 ========== */
+  .manga-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--line);
+    background-color: var(--fg);
+    color: var(--bg);
+    padding: 0.6rem 1.3rem;
+    font-weight: 700;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .manga-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 0 #e63946;
+  }
+
+  .manga-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--line);
+    background-color: transparent;
+    color: var(--fg);
+    padding: 0.6rem 1.3rem;
+    font-weight: 700;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .manga-btn-outline:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 0 var(--line);
+  }
+
+  /* ========== 标签 ========== */
+  .manga-tag {
+    display: inline-block;
+    border: 1.5px solid var(--line);
+    padding: 0.15rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* ========== 背景纹理 ========== */
+  .bg-grid {
+    background-image: url("/images/grid.png");
+    background-repeat: repeat;
+  }
+}
+
+/* 移动端减少动画 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
