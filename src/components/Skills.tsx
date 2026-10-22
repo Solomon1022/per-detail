@@ -8,7 +8,7 @@ export default function Skills() {
   const { t } = useLang();
 
   return (
-    <section id="skills" className="mx-auto max-w-5xl px-5 py-20">
+    <section id="skills" className="mx-auto max-w-5xl px-5 py-14">
       <SectionTitle index="05" zh="技能栈" en="Skills" />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

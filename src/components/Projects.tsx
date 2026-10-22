@@ -10,7 +10,7 @@ export default function Projects() {
   const { t } = useLang();
 
   return (
-    <section id="projects" className="mx-auto max-w-5xl px-5 py-20">
+    <section id="projects" className="mx-auto max-w-5xl px-5 py-14">
       <SectionTitle index="04" zh="项目作品" en="Projects" />
 
       <div className="grid gap-8 md:grid-cols-2">

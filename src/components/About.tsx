@@ -9,7 +9,7 @@ export default function About() {
   const { t } = useLang();
 
   return (
-    <section id="about" className="mx-auto max-w-5xl px-5 py-20">
+    <section id="about" className="mx-auto max-w-5xl px-5 py-14">
       <SectionTitle index="01" zh="关于我" en="About" />
 
       <div className="grid gap-8 md:grid-cols-5">

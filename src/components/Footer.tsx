@@ -9,7 +9,7 @@ export default function Footer() {
   const { t } = useLang();
 
   return (
-    <footer className="border-t-2 border-[var(--line)] py-10">
+    <footer className="border-t-2 border-[var(--line)] py-6">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-5">
         <div className="flex gap-3">
           <a

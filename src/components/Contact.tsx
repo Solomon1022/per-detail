@@ -81,7 +81,7 @@ export default function Contact() {
     "w-full border-2 border-[var(--line)] bg-[var(--card)] px-4 py-2.5 text-sm outline-none transition-shadow focus:shadow-manga-sm dark:focus:shadow-manga-white";
 
   return (
-    <section id="contact" className="mx-auto max-w-5xl px-5 py-20">
+    <section id="contact" className="mx-auto max-w-5xl px-5 py-14">
       <SectionTitle index="06" zh="联系我" en="Contact" />
 
       <div className="grid gap-8 md:grid-cols-2">
