@@ -443,10 +443,10 @@ export default function Home() {
         <div className="creative-grid"><div className="creative-copy"><h2 className="section-title">{t.creativeTitle}</h2><p className="section-intro">{t.creativeDesc}</p><div className="creative-legend"><span><i className="legend-dot legend-dot--red" /> ORIGINAL CHARACTER</span><span><i className="legend-dot legend-dot--gray" /> PRODUCT MASCOT</span></div></div>
           <div className="creative-art-grid">
             <div className="oc-grid">
-              <div className="creative-art"><Image src="/assets/oc-glasses.png" alt="原创 OC 开心版" width={500} height={500} /></div>
-              <div className="creative-art"><Image src="/assets/oc-expression-open.png" alt="原创 OC 张嘴版" width={500} height={500} /></div>
-              <div className="creative-art"><Image src="/assets/oc-expression-calm.png" alt="原创 OC 平静版" width={500} height={500} /></div>
-              <div className="creative-art"><Image src="/assets/oc-expression-glasses.png" alt="原创 OC 戴眼镜版" width={500} height={500} /></div>
+              <div className="creative-art"><Image src="/assets/oc-glasses-crop.png" alt="原创 OC 开心版" width={600} height={600} /></div>
+              <div className="creative-art"><Image src="/assets/oc-expression-open-crop.png" alt="原创 OC 张嘴版" width={600} height={600} /></div>
+              <div className="creative-art"><Image src="/assets/oc-expression-calm-crop.png" alt="原创 OC 平静版" width={600} height={600} /></div>
+              <div className="creative-art"><Image src="/assets/oc-expression-glasses-crop.png" alt="原创 OC 戴眼镜版" width={600} height={600} /></div>
             </div>
             <div className="creative-art creative-art--bulby"><Image src="/assets/bulby-mascot.png" alt="Bulby 灯泡小助手手绘形象" width={360} height={640} /><span>{t.bulbyLabel}</span></div>
           </div>
