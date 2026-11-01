@@ -360,7 +360,7 @@ export default function Home() {
         <div className="hero-art-wrap">
           <div className="hero-art-card">
             <div className="art-card-top"><span>ORIGINAL ARTWORK</span><span>01 / OC</span></div>
-            <Image src="/assets/oc-main.png" alt="张昭坤原创 OC 手绘角色" width={760} height={760} priority className="hero-oc" />
+            <Image src="/assets/oc-hero.png" alt="张昭坤原创 OC 手绘角色（开心版）" width={760} height={1060} priority className="hero-oc" />
             <span className="art-heart art-heart--one">♥</span><span className="art-heart art-heart--two">♥</span>
             <div className="art-caption"><strong>Zhaokun’s OC</strong><span>{t.heroSide}</span></div>
           </div>
@@ -397,13 +397,19 @@ export default function Home() {
               const desc = project.id === "sequflow" ? t.sequflowDesc : project.id === "bulby" ? t.bulbyDesc : project.id === "study" ? t.studyDesc : t.fanDesc;
               const role = project.id === "sequflow" ? t.sequflowRole : project.id === "bulby" ? t.bulbyRole : project.id === "study" ? t.studyRole : t.fanRole;
               const demo = project.id === "sequflow" ? links.sequflowApp : project.id === "bulby" ? links.bulby : project.id === "fan" ? links.fanArchive : null;
-              const repo = project.id === "sequflow" ? links.sequflowRepo : project.id === "bulby" ? links.bulbyRepo : project.id === "study" ? links.studyRepo : null;
+              const repo = project.id === "sequflow" ? links.sequflowRepo : project.id === "bulby" ? links.bulbyRepo : project.id === "study" ? links.studyRepo : project.id === "fan" ? links.portfolioRepo : null;
+              const titleLink = project.id === "bulby" ? links.bulby : project.id === "fan" ? links.fanArchive : null;
               return (
                 <article className={`project-card project-card--${project.id}`} key={project.id}>
                   <ProjectVisual id={project.id} />
                   <div className="project-card-body">
                     <div className="project-overline"><span>{project.category}</span>{project.status === "featured" ? <b>{t.featured}</b> : project.status === "progress" ? <b className="status-progress">{t.inProgress}</b> : <b className="status-fan">{t.fanMade}</b>}</div>
-                    <h3>{project.name}</h3><p className="project-role">{role}</p><p className="project-desc">{desc}</p>
+                    {titleLink ? (
+                      <h3><Link href={titleLink} target="_blank" rel="noreferrer" className="project-title-link">{project.name} <span>↗</span></Link></h3>
+                    ) : (
+                      <h3>{project.name}</h3>
+                    )}
+                    <p className="project-role">{role}</p><p className="project-desc">{desc}</p>
                     <div className="tag-list">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                     <div className="project-links">{demo && <Link href={demo} target="_blank" rel="noreferrer">{t.live} ↗</Link>}{repo && <Link href={repo} target="_blank" rel="noreferrer">{t.source} ↗</Link>}</div>
                   </div>
@@ -435,7 +441,15 @@ export default function Home() {
       <section className="section container creative-section">
         <div className="section-kicker"><span>05</span>{t.creativeKicker}</div>
         <div className="creative-grid"><div className="creative-copy"><h2 className="section-title">{t.creativeTitle}</h2><p className="section-intro">{t.creativeDesc}</p><div className="creative-legend"><span><i className="legend-dot legend-dot--red" /> ORIGINAL CHARACTER</span><span><i className="legend-dot legend-dot--gray" /> PRODUCT MASCOT</span></div></div>
-          <div className="creative-art-grid"><div className="creative-art creative-art--oc"><Image src="/assets/oc-glasses.png" alt="原创 OC 的戴眼镜手绘版本" width={500} height={500} /><span>{t.ocLabel}</span></div><div className="creative-art creative-art--bulby"><Image src="/assets/bulby-mascot.png" alt="Bulby 灯泡小助手手绘形象" width={360} height={640} /><span>{t.bulbyLabel}</span></div></div>
+          <div className="creative-art-grid">
+            <div className="oc-grid">
+              <div className="creative-art"><Image src="/assets/oc-glasses.png" alt="原创 OC 开心版" width={500} height={500} /></div>
+              <div className="creative-art"><Image src="/assets/oc-expression-open.png" alt="原创 OC 张嘴版" width={500} height={500} /></div>
+              <div className="creative-art"><Image src="/assets/oc-expression-calm.png" alt="原创 OC 平静版" width={500} height={500} /></div>
+              <div className="creative-art"><Image src="/assets/oc-expression-glasses.png" alt="原创 OC 戴眼镜版" width={500} height={500} /></div>
+            </div>
+            <div className="creative-art creative-art--bulby"><Image src="/assets/bulby-mascot.png" alt="Bulby 灯泡小助手手绘形象" width={360} height={640} /><span>{t.bulbyLabel}</span></div>
+          </div>
         </div>
       </section>
 
