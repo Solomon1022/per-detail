@@ -1,9 +1,8 @@
 "use client";
 
-import { ArrowDown, Mail, MapPin, Sparkles, Star } from "lucide-react";
+import { ArrowDown, Mail, MapPin } from "lucide-react";
 import { useLang } from "@/context/LanguageProvider";
 import { resume } from "@/content/resume";
-import AvatarHover from "./AvatarHover";
 
 export default function Hero() {
   const { t } = useLang();
@@ -14,11 +13,6 @@ export default function Hero() {
       className="relative mx-auto flex min-h-[calc(100vh-8rem)] max-w-5xl flex-col items-center justify-center gap-8 px-5 pb-12 pt-20 md:flex-row md:gap-10"
     >
       <div className="order-2 relative flex-1 animate-fade-up text-center md:order-1 md:text-left">
-        {/* 装饰：右上角闪光 */}
-        <Sparkles
-          aria-hidden
-          className="pointer-events-none absolute -top-4 right-4 hidden h-5 w-5 animate-float text-accent md:block"
-        />
         <p className="mb-3 font-mono text-sm font-bold text-accent">
           {t("你好，我是", "Hi there, I'm")}
         </p>
@@ -45,7 +39,6 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
           <a href="#projects" className="manga-btn">
             {t("查看项目", "View Projects")}
-            <ArrowDown size={16} />
           </a>
           <a href="#contact" className="manga-btn-outline">
             <Mail size={16} />
@@ -54,24 +47,30 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* 装饰：Hero 右侧留白区，CSS 几何图形错落分布（细线、小尺寸、低调配色、无动画） */}
       <div className="order-1 md:order-2">
-        <div className="relative mx-auto w-56 md:w-72">
-          {/* 装饰：虚线方框 */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -left-3 -top-3 h-14 w-14 border-2 border-dashed border-[var(--line)] opacity-50"
-          />
-          {/* 装饰：漂浮星星 */}
-          <Star
-            aria-hidden
-            className="pointer-events-none absolute -right-3 -top-4 h-7 w-7 animate-float fill-accent text-accent"
-          />
-          {/* 装饰：小色块 */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-3 -left-4 h-3 w-3 rotate-12 bg-accent"
-          />
-          <AvatarHover />
+        <div
+          aria-hidden
+          className="pointer-events-none relative hidden h-72 w-60 md:block"
+        >
+          {/* 虚线圆形（右上） */}
+          <div className="absolute right-2 top-0 h-16 w-16 rounded-full border border-dashed border-[var(--line)] opacity-50" />
+          {/* 实线正方形（左上，轻微旋转） */}
+          <div className="absolute left-0 top-6 h-10 w-10 rotate-6 border border-[var(--line)] opacity-50" />
+          {/* 实心小圆（中上，accent） */}
+          <div className="absolute left-20 top-2 h-2 w-2 rounded-full bg-accent opacity-60" />
+          {/* 实线矩形（右中，accent 细线） */}
+          <div className="absolute right-8 top-10 h-7 w-10 border border-accent opacity-60" />
+          {/* 实线小正方形（右中，轻微反向旋转） */}
+          <div className="absolute right-0 top-16 h-5 w-5 -rotate-6 border border-[var(--line)] opacity-50" />
+          {/* 实心小圆（左中，中性色） */}
+          <div className="absolute left-16 top-24 h-2 w-2 rounded-full bg-[var(--line)] opacity-50" />
+          {/* 实线矩形（左下） */}
+          <div className="absolute bottom-20 left-2 h-8 w-12 border border-[var(--line)] opacity-50" />
+          {/* 虚线正方形（右下，轻微旋转） */}
+          <div className="absolute bottom-8 right-4 h-9 w-9 rotate-12 border border-dashed border-[var(--line)] opacity-50" />
+          {/* 实线小正方形（中下，轻微旋转） */}
+          <div className="absolute bottom-4 left-24 h-5 w-5 rotate-6 border border-[var(--line)] opacity-50" />
         </div>
       </div>
 
