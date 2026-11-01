@@ -8,3 +8,6 @@
 !.env.example
 
 *.tsbuildinfo
+
+.vercel
+.env*
