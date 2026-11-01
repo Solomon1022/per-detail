@@ -1,0 +1,22 @@
+张昭坤个人作品集 V2 — Windows 部署速查
+
+1. 解压 ZIP。
+2. 用 Edge 打开 Vercel；用 VS Code 或终端打开 zhaokun-portfolio-v2 文件夹。
+3. 安装依赖：npm install
+4. 本地预览：npm run dev
+   浏览器访问：http://localhost:3000
+5. 正式构建检查：npm run build
+6. 安装 Vercel CLI（如尚未安装）：npm install -g vercel
+7. PowerShell 清理代理变量：
+   $env:HTTP_PROXY = ""
+   $env:HTTPS_PROXY = ""
+   $env:ALL_PROXY = ""
+   $env:http_proxy = ""
+   $env:https_proxy = ""
+   $env:all_proxy = ""
+8. 在项目目录执行：vercel
+   首次请选择创建全新的项目，例如 zhaokun-portfolio-v2。
+9. 预览无误后执行：vercel --prod
+10. 确认新站正常后，再考虑绑定自己的域名。不要提前删除旧站或 Cloudflare DNS 记录。
+
+项目不需要环境变量，不包含真实大模型 API 调用。Bulby 当前是本地预设问答助手。
